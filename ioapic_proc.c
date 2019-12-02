@@ -415,7 +415,7 @@ static int ioapic_proc_init(void)
 	return 0;
 }
  
-static void simple_cleanup(void)
+static void ioapic_proc_cleanup(void)
 {
 	int listnum = sizeof(ioapic_ops_list)/sizeof(ioapic_ops_list[0]);
 	int i;
@@ -427,5 +427,5 @@ static void simple_cleanup(void)
 }
  
 module_init(ioapic_proc_init);
-module_exit(simple_cleanup);
+module_exit(ioapic_proc_cleanup);
 
